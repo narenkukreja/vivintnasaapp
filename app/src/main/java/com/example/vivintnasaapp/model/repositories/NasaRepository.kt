@@ -15,17 +15,17 @@ object NasaRepository {
         .build()
         .create(ApiService::class.java)
 
-    suspend fun getImages(q : String, description : String) : NasaImagesResponse? {
+    suspend fun getImages(q: String, description: String): NasaImagesResponse? {
         return try {
             withContext(Dispatchers.IO) {
                 val response = retrofit.getImages(q, description)
-                if (response.isSuccessful){
+                if (response.isSuccessful) {
                     response.body()
                 } else {
                     null
                 }
             }
-        } catch (e : Exception) {
+        } catch (e: Exception) {
             null
         }
     }

@@ -11,7 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.vivintnasaapp.R
 import com.example.vivintnasaapp.model.data.nasaimages.Item
 
-class NasaRecyclerViewAdapter(private val context : Context, private val imagesList : List<Item>) : RecyclerView.Adapter<NasaRecyclerViewAdapter.MyCustomViewHolder>() {
+class NasaRecyclerViewAdapter(private val context : Context, private val itemList : List<Item>) : RecyclerView.Adapter<NasaRecyclerViewAdapter.MyCustomViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -21,14 +21,14 @@ class NasaRecyclerViewAdapter(private val context : Context, private val imagesL
     }
 
     override fun onBindViewHolder(holder: NasaRecyclerViewAdapter.MyCustomViewHolder, position: Int) {
-        val nasaImageObject = imagesList[position]
+        val nasaImageObject = itemList[position]
         holder.titleTV.text = nasaImageObject.data.first().title
         holder.descTV.text = nasaImageObject.data.first().description
         Glide.with(context).load(nasaImageObject.links.first().href).into(holder.nasaIV);
     }
 
     override fun getItemCount(): Int {
-        return imagesList.size
+        return itemList.size
     }
 
     inner class MyCustomViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {

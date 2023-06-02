@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">VivintNasaApp</string>
+    <string name="text_error_state">We are having trouble getting what you need, please try again later.</string>
 </resources>
