@@ -1,4 +1,9 @@
 package com.example.vivintnasaapp.application
 
-class MyApplication {
+import android.app.Application
+
+class MyApplication : Application() {
+    companion object {
+        val TAG = "NasaVivint"
+    }
 }

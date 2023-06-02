@@ -1,4 +1,4 @@
-package com.example.vivintnasaapp.model.data
+package com.example.vivintnasaapp.model.data.nasaimages
 
 data class Collection(
     val href: String,
