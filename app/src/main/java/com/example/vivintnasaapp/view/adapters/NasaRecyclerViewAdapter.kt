@@ -1,6 +1,7 @@
 package com.example.vivintnasaapp.view.adapters
 
 import android.content.Context
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,7 @@ class NasaRecyclerViewAdapter(private val context : Context, private val itemLis
 
     override fun onBindViewHolder(holder: NasaRecyclerViewAdapter.MyCustomViewHolder, position: Int) {
         val nasaImageObject = itemList[position]
-        holder.titleTV.text = nasaImageObject.data.first().title
+        holder.titleTV.text = Html.fromHtml("<u>${nasaImageObject.data.first().title}</u>", Html.FROM_HTML_MODE_LEGACY)
         holder.descTV.text = nasaImageObject.data.first().description
         Glide.with(context).load(nasaImageObject.links.first().href).into(holder.nasaIV);
     }

@@ -14,7 +14,7 @@ import com.example.vivintnasaapp.view.adapters.NasaRecyclerViewAdapter
 import com.example.vivintnasaapp.viewmodel.viewmodels.NasaViewModel
 import kotlinx.coroutines.launch
 
-class MainActivity : AppCompatActivity() {
+class VivintNasaActivity : AppCompatActivity() {
 
     private lateinit var viewModel: NasaViewModel
     private lateinit var binding: ActivityVivintNasaBinding
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                     is NasaViewModel.UIState.Error -> {
                         binding.nasaImagesRV.visibility = View.GONE
                         Toast.makeText(
-                            this@MainActivity,
+                            this@VivintNasaActivity,
                             getString(R.string.text_error_state),
                             Toast.LENGTH_SHORT
                         ).show()
@@ -43,10 +43,10 @@ class MainActivity : AppCompatActivity() {
                     }
                     is NasaViewModel.UIState.Success -> {
                         binding.nasaImagesRV.visibility = View.VISIBLE
-                        val nasaCollectionAdapter = NasaRecyclerViewAdapter(this@MainActivity as Context, state.itemsList)
+                        val nasaCollectionAdapter = NasaRecyclerViewAdapter(this@VivintNasaActivity as Context, state.itemsList)
                         nasaImagesRV.apply {
                             adapter = nasaCollectionAdapter
-                            layoutManager = LinearLayoutManager(this@MainActivity)
+                            layoutManager = LinearLayoutManager(this@VivintNasaActivity)
                         }
                     }
                 }

@@ -17,7 +17,7 @@ class NasaViewModel : ViewModel() {
     fun getImages(q: String, description: String) = viewModelScope.launch {
         try {
             // simulate loading state (UIState.Loading) with a simple delay
-            delay(1000L)
+            delay(500L)
             val response = NasaRepository.getImages(q, description)
             response?.let {
                 // Filter results to show top 10 as per instructions
