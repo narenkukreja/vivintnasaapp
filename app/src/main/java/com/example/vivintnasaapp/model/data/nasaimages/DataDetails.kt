@@ -1,6 +1,6 @@
 package com.example.vivintnasaapp.model.data.nasaimages
 
-data class Data(
+data class DataDetails(
     val album: List<String>,
     val center: String,
     val date_created: String,

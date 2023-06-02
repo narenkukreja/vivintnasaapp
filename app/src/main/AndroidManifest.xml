@@ -14,7 +14,7 @@
         android:theme="@style/Theme.VivintNasaApp"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.ui.MainActivity"
             android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>

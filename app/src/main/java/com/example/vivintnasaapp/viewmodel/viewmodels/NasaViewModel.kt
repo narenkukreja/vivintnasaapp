@@ -18,6 +18,7 @@ class NasaViewModel : ViewModel() {
             _nasaImageMutableStateFlow.value = UIState.Loading
             val response = NasaRepository.getImages(q, description)
             response?.let {
+                // Filter results to show top 10 as per instructions
                 _nasaImageMutableStateFlow.value = UIState.Success(it.collection.items.subList(0, 10))
             } ?: run {
                 UIState.Error("Response object is null")
